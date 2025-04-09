@@ -1,0 +1,44 @@
+{
+	"name": "my-app",
+	"version": "1.0.0",
+	"private": true,
+	"description": "A basic Express.js application",
+	"type": "module",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "NODE_ENV=production node --watch --env-file=.env.local src/index.js",
+		"dev": "NODE_ENV=development node --watch --env-file=.env.local src/index.js",
+		"mongo": "sudo mongod --dbpath ~/data/db"
+	},
+	"dependencies": {
+		"bcrypt": "^5.1.1",
+		"cloudinary": "^2.6.0",
+		"compression": "^1.7.4",
+		"cookie-parser": "^1.4.7",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"helmet": "^5.0.2",
+		"joi": "^17.13.3",
+		"jsonwebtoken": "^9.0.2",
+		"mongoose": "^6.4.4",
+		"morgan": "^1.10.0",
+		"multer": "^1.4.5-lts.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GausAlMunirTushar/create-express-app.git"
+	},
+	"author": "Your Name",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/GausAlMunirTushar/create-express-app/issues"
+	},
+	"homepage": "https://github.com/GausAlMunirTushar/create-express-app"
+}
