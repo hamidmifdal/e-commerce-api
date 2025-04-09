@@ -23,3 +23,5 @@ npm run start
 ```
 
 Your application will be running at `http://localhost:3000` by default.
+If you want to know how to use links, read this file:
+    >>> REST_API_Ecomme.postman_collection.json
