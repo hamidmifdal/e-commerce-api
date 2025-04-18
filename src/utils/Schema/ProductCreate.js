@@ -5,7 +5,8 @@ export const newProducts = Joi.object({
     desc    : Joi.string().min(10).max(40).required(),
     prix    : Joi.number().required(),
     category: Joi.string().min(3).max(15).required(),
-    color   : Joi.array().items(Joi.string()).optional()
+    // color   : Joi.string().optional()
+    color   : Joi.array().items(Joi.string()).optional(),
 })
 //new product
 export const editeProducts = Joi.object({
@@ -16,7 +17,10 @@ export const editeProducts = Joi.object({
     color   : Joi.array().items(Joi.string()).optional()
 })
 export const ValidateProducts = (schema) => (req,res,next) =>{
-    const {error, value} = schema.validate(req.body);
+    const {error, value} = schema.validate(req.body, {
+        abortEarly: false,
+        allowUnknown: false
+    });
     if (error) {
         const errors = {};
         error.details.forEach(err => {

@@ -1,5 +1,12 @@
 import Cloudinary from 'cloudinary'
 
+export const Cloud2 = Cloudinary.v2
+Cloud2.config({
+    cloud_name  : process.env.CLOUDINARY_NAME,
+    api_key     : process.env.CLOUDINARY_API_KEY,
+    api_secret  : process.env.CLOUDINARY_API_SECRET
+
+})
 const Cloud = Cloudinary.v2
 Cloud.config({
     cloud_name  : process.env.CLOUDINARY_NAME,

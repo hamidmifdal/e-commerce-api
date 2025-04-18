@@ -1,3 +1,4 @@
+import { url } from 'inspector';
 import { model, Schema } from 'mongoose'
 
 const PostSchema = new Schema({
@@ -22,6 +23,11 @@ const PostSchema = new Schema({
         role: 'User',
         required : true
 
+    },
+    image : {
+        type : Object,
+        PublicId : null,
+        url         : '/image/iconDefault.png'
     }
 },{timeseries:true})
 

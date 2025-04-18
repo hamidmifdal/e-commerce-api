@@ -10,10 +10,25 @@ import errorHandler from '../middlewares/errorHandler.js';
 import logger from '../utils/logger.js';
 //static url image
 const __static = ('/images', express.static('public'))
+const corsOptions = {
+        origin: function (origin, callback) {
+          // Allow requests with no origin (like mobile apps or curl requests)
+          if (!origin) return callback(null, true);
+          
+          // You could also check against a whitelist of allowed origins here
+          // if (allowedOrigins.includes(origin)) {
+          //   return callback(null, true);
+          // }
+          
+          // For this example, we'll allow all origins
+          callback(null, true);
+        },
+        credentials: true
+      };
 const app = express();
 const Middleware = {
 Global : [express.json(), express.urlencoded({ extended: true }),
-        cors({ origin: process.env.CORS_ORIGIN || '*', credentials: true }),
+        cors(corsOptions),
         helmet(), compression(), morgan('dev', { stream: logger.stream }),
         __static,cookieParser(process.env.COOKIES_SUCRET)
 ]}
